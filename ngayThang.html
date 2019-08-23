@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một ứng dụng cho phép tính được số ngày trong một tháng</title>
+</head>
+<body>
+<form>
+    <input type="text" id="nhapThang" value="">
+</form>
+<button type="button" id="btn" onclick="tinhToan()">Tính số ngày</button>
+<p id="result">Result:</p>
+<script>
+    function tinhToan() {
+        let nhapThang = document.getElementById("nhapThang").value;
+        switch (nhapThang) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                document.getElementById("result").innerHTML = "Tháng"+ nhapThang + "có 31 ngày";
+                break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                document.getElementById("result").innerHTML =  "Tháng "+ nhapThang + " có 30 ngày";
+                break;
+            case '2':
+                document.getElementById("result").innerHTML =  "Tháng "+ nhapThang + " có 28 ngày hoặc 29 ngày";
+                break;
+            default:
+                document.getElementById("result").innerHTML = "Hãy nhập số tháng chính xác";
+        }
+    }
+</script>
+</body>
+</html>
